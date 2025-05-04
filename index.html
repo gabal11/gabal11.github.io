@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GabalAI - Tech & AI Consulting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #111; color: #f0f0f0; }
+        header { background: #1e1e1e; padding: 20px; text-align: center; }
+        h1 { color: #00ff99; }
+        section { padding: 20px; max-width: 800px; margin: auto; }
+        .button { background: #00ff99; color: #111; padding: 10px 20px; border: none; cursor: pointer; }
+        footer { text-align: center; padding: 10px; background: #1e1e1e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GabalAI</h1>
+        <p>مستشار تقني | محتوى رقمي | ذكاء اصطناعي</p>
+    </header>
+    <section>
+        <h2>عن المشروع</h2>
+        <p>مرحبا بك في GabalAI، منصة تجمع بين المعرفة التقنية، الكتابات الرقمية، والاستشارات الذكية المدفوعة عبر Ethereum.</p>
+        
+        <h3>اشترِ كتابنا الرقمي</h3>
+        <p>الكتاب متاح مقابل 0.01 ETH.</p>
+        <button class="button" onclick="connectWallet()">اتصل بمحفظتك</button>
+        <div id="wallet-status"></div>
+        
+        <h3>الشات بوت (الدعم الذكي)</h3>
+        <p>هل تحتاج مساعدة؟ اسأل الآن عبر الدعم الفوري.</p>
+        <div id="chatbot-placeholder">[هنا سيتم دمج الشات بوت لاحقًا]</div>
+    </section>
+    <footer>
+        <p>&copy; 2025 GabalAI</p>
+    </footer>
+
+    <script>
+        async function connectWallet() {
+            if (typeof window.ethereum !== 'undefined') {
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                document.getElementById("wallet-status").innerText = "تم الاتصال: " + accounts[0];
+            } else {
+                alert("محفظة Web3 غير موجودة. يرجى تثبيت MetaMask.");
+            }
+        }
+    </script>
+</body>
+</html>
